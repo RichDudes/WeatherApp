@@ -13,11 +13,9 @@ public class Weather {
         SUNDAY("Sunday");
 
         private String currentDay;
-
         WeekDay(String day){
             currentDay = day;
         }
-
         public String toString() {
             return currentDay;
         }
