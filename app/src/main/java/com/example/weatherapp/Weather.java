@@ -2,6 +2,7 @@ package com.example.weatherapp;
 
 public class Weather {
     private String city;
+
     public enum WeekDay {
         MONDAY("Monday"),
         TUESDAY("Tuesday"),
@@ -36,4 +37,18 @@ public class Weather {
         this.clouds = clouds;
     }
 
+    public String getCity() { return city; }
+    public void setCity(String city) { this.city = city; }
+
+    public WeekDay getWeekDay() { return weekDay; }
+    public void setWeekDay(WeekDay weekDay) { this.weekDay = weekDay; }
+
+    public double getTemp_min() { return temp_min; }
+    public void setTemp_min(double temp_min) { this.temp_min = temp_min; }
+
+    public double getTemp_max() { return temp_max; }
+    public void setTemp_max(double temp_max) { this.temp_max = temp_max; }
+
+    public int getClouds() { return clouds; }
+    public void setClouds(int clouds) { this.clouds = clouds; }
 }
