@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class MainPresenter implements MainContract.Presenter {
 
     MainContract.View view;
+
     ArrayList<Weather> weathers = new ArrayList<>();
 
     public MainPresenter(MainContract.View view) {

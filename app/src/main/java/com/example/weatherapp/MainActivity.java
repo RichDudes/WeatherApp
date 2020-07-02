@@ -12,7 +12,6 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements MainContract.View {
 
-
     MainContract.Presenter mPresenter;
     RecyclerView recyclerView;
     MyRecyclerAdapter mAdapter;
@@ -23,11 +22,8 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
 
         recyclerView = findViewById(R.id.recyclerView);
 
-
         mPresenter = new MainPresenter(this);
         mPresenter.requestWeathers();
-
-
     }
 
     @Override
@@ -36,6 +32,5 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(mAdapter);
     }
-
 
 }
