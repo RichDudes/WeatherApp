@@ -13,7 +13,10 @@ public class RestController {
 
     private void createRetrofit() {
         mRetrofit = new Retrofit.Builder()
-                .baseUrl("")
+                .baseUrl("https://climacell-microweather-v1.p.rapidapi.com/")
                 .addConverterFactory(GsonConverterFactory.create()).build();
+    }
+    WeatherApi provideWeatherApi() {
+        return mRetrofit.create(WeatherApi.class);
     }
 }

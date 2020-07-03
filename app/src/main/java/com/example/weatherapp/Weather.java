@@ -1,52 +1,36 @@
 package com.example.weatherapp;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Weather {
-    private String city;
+    @SerializedName("lat")
+    double lat;
+    @SerializedName("lo0n")
+    double lon;
+    private Precipitation precipitation;
+    private ObservationTime observationTime;
 
-    public enum WeekDay {
-        MONDAY("Monday"),
-        TUESDAY("Tuesday"),
-        WEDNESDAY("Wednesday"),
-        THURSDAY("Thursday"),
-        FRIDAY("Friday"),
-        SATURDAY("Saturday"),
-        SUNDAY("Sunday");
-
-        private String currentDay;
-        WeekDay(String day){
-            currentDay = day;
-        }
-        public String toString() {
-            return currentDay;
-        }
+    public double getLat() {
+        return lat;
     }
 
-    private WeekDay weekDay;
-    private double temp_min;
-    private double temp_max;
-    private int clouds;
-
-    public Weather(String city, WeekDay weekDay, double temp_min, double temp_max, int clouds) {
-
-        this.city = city;
-        this.weekDay = weekDay;
-        this.temp_min = temp_min;
-        this.temp_max = temp_max;
-        this.clouds = clouds;
+    public void setLat(double lat) {
+        this.lat = lat;
     }
 
-    public String getCity() { return city; }
-    public void setCity(String city) { this.city = city; }
+    public double getLon() {
+        return lon;
+    }
 
-    public WeekDay getWeekDay() { return weekDay; }
-    public void setWeekDay(WeekDay weekDay) { this.weekDay = weekDay; }
+    public void setLon(double lon) {
+        this.lon = lon;
+    }
+}
 
-    public double getTemp_min() { return temp_min; }
-    public void setTemp_min(double temp_min) { this.temp_min = temp_min; }
+class Precipitation {
+    int value;
+    String units;
+}
+class ObservationTime {
 
-    public double getTemp_max() { return temp_max; }
-    public void setTemp_max(double temp_max) { this.temp_max = temp_max; }
-
-    public int getClouds() { return clouds; }
-    public void setClouds(int clouds) { this.clouds = clouds; }
 }
